@@ -1,0 +1,271 @@
+.content {
+	color: white;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 100%;
+}
+
+@media (min-width: 786px) {
+	.content {
+		min-height: 80vh;
+		flex: 0 0 50%;
+		padding: 1rem;
+	}
+}
+
+.content-wrapper {
+	display: flex;
+	gap: 8px;
+	flex-direction: column;
+}
+
+.content-wrapper h1 {
+	margin-top: 0;
+	margin-bottom: 2rem;
+}
+
+.content-task-list {
+	list-style: none;
+	padding-left: 0;
+	margin: 0;
+	position: relative;
+}
+
+.content-task-list-item {
+	display: flex;
+	padding: 16px;
+	background-color: #1f1f1f;
+	border-radius: 8px;
+	margin-bottom: 8px;
+}
+
+.task-item {
+	width: 100%;
+	gap: 16px;
+	border: 1px solid transparent;
+}
+
+.task-item-wrap {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+
+.task-done .task-item {
+	border-color: #1f1f1f;
+	background-color: transparent;
+}
+
+.task-item-title {
+	font-weight: bold;
+	cursor: pointer;
+	display: block;
+}
+
+.task-item-check {
+	appearance: none;
+	color: white;
+	font-weight: bold;
+	padding: 6px;
+	background-image: url('../../assets/unchecked.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100%;
+	width: 24px;
+	height: 24px;
+}
+
+.task-item-check:checked {
+	background-image: url('../../assets/checked.svg');
+}
+
+.add-task-form {
+	position: relative;
+	width: 100%;
+	display: flex;
+}
+
+.add-task-button {
+	background-image: url('../../assets/add.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100%;
+	width: 24px;
+	height: 24px;
+	position: absolute;
+	right: 16px;
+	top: 50%;
+	transform: translateY(-50%);
+	border-radius: 8px;
+	padding: 4px;
+}
+
+.task-item-edit {
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 16px;
+}
+
+.task-item-edit > div {
+	width: 100%;
+}
+
+.task-item-edit-save {
+	width: 100%;
+}
+
+.task-item-edit-title input {
+	font-style: normal;
+	font-size: 24px;
+	font-weight: bold;
+	padding: 12px 0;
+	margin-bottom: 8px;
+}
+
+.task-item-edit-description {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.task-item-edit-description span {
+	font-size: 12px;
+}
+
+.task-item-edit-description textarea {
+	appearance: none;
+	border: none;
+	border-radius: 8px;
+	padding: 16px 14px;
+	background-color: #161616;
+	color: white;
+	font-size: 16px;
+	font-family: 'Inter', sans-serif;
+}
+
+.task-item-edit-header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.task-item-edit-group {
+	color: #fca311;
+	font-size: 12px;
+}
+
+.task-item-edit-buttons {
+	display: flex;
+	gap: 8px;
+}
+
+.btn-delete {
+	appearance: none;
+	border: none;
+	padding: 8px 14px;
+	border-radius: 2px;
+	background-color: transparent;
+	background-image: url('../../assets/delete.svg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 100%;
+	width: 24px;
+	height: 24px;
+}
+
+.btn-complete {
+	font-size: 12px;
+	padding: 4px 8px;
+	border-radius: 8px;
+	background-color: transparent;
+	color: white;
+	border: 1px solid #fca311;
+	display: flex;
+	align-items: center;
+}
+
+.btn-complete input {
+	background-size: 26px;
+	margin: 0;
+	height: 17px;
+	width: 17px;
+}
+
+.modal {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	padding: 10rem 0;
+}
+
+.modal-content {
+	padding: 16px;
+	background-color: #1f1f1f;
+	border-radius: 8px;
+	margin-bottom: 8px;
+	position: relative;
+	z-index: 10;
+	width: 90%;
+	margin: 0 auto;
+}
+
+@media (min-width: 786px) {
+	.modal-content {
+		width: 50%;
+		margin-left: auto;
+		margin-right: 0;
+	}
+}
+
+.modal::after {
+	content: '';
+	display: block;
+	position: fixed;
+	inset: 0;
+	background-color: rgba(31, 31, 31, 0.6);
+	z-index: 1;
+}
+.confirmation-popup {
+	position: relative;
+}
+.confirmation-popup-wrap {
+	position: relative;
+	z-index: 100;
+	background-color: #161616;
+	border-radius: 8px;
+	padding: 16px;
+}
+
+.confirmation-popup::after {
+	content: '';
+	display: block;
+	position: fixed;
+	inset: 0;
+	background-color: rgba(223, 223, 223, 0.2);
+	z-index: 99;
+}
+
+.confirmation-popup-btns {
+	display: flex;
+	flex-direction: row;
+	gap: 16px;
+	margin: 16px 0 0;
+}
+
+.confirmation-popup-yes {
+	background-color: #c71111;
+}
+
+.confirmation-popup-no {
+	border: 1px solid white;
+	color: white;
+	background-color: transparent;
+}
